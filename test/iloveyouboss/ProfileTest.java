@@ -8,6 +8,8 @@
 ***/
 package iloveyouboss;
 
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*; 
 import org.junit.*;
 
 public class ProfileTest {
@@ -24,5 +26,8 @@ public class ProfileTest {
 		Answer criteriaAnswer = new Answer(question, Bool.TRUE);
 		Criterion criterion = new Criterion(criteriaAnswer, Weight.MustMatch);
 		criteria.add(criterion);
+		
+		boolean matches = profile.matches(criteria);
+		assertFalse(matches);
 	}
 }
