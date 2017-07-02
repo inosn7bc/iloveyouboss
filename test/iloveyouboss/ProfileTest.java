@@ -42,7 +42,8 @@ public class ProfileTest {
 	}
 	
 	@Test
-	public void test不問の条件があれば_matchesはtrueを返す() {
+	@Ignore
+	public void test不問の条件があれば_matchesはtrueを返すx() {
 		profile.add(new Answer(question, Bool.FALSE));
 
 		criteria.add(new Criterion(new Answer(question, Bool.TRUE), Weight.DontCare));
