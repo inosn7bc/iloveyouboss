@@ -15,7 +15,7 @@ import org.junit.*;
 public class ProfileTest {
 
 	@Test
-	public void test() {
+	public void test必須の条件にマッチしない場合_matchesはfalseを返す() {
 		Profile profile = new Profile("Bull Hockey, Inc.");
 		Question question = new BooleanQuestion(1, "ボーナスは支給されますかx?");
 		
