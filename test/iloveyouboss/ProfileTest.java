@@ -13,7 +13,8 @@ import static org.hamcrest.CoreMatchers.*;
 import org.junit.*;
 
 /**
- * てすと
+ * てすと2
+ * 
  * @author sn1
  *
  */
