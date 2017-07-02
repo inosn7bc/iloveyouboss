@@ -14,15 +14,23 @@ import org.junit.*;
 
 public class ProfileTest {
 
-	@Test
-	public void test必須の条件にマッチしない場合_matchesはfalseを返す() {
-		Profile profile = new Profile("Bull Hockey, Inc.");
-		Question question = new BooleanQuestion(1, "ボーナスは支給されますかx?");
+	private Profile profile;
+	private Question question;
+	private Criteria criteria;
+	
+	@Before
+	public void create(){
+		profile = new Profile("Bull Hockey, Inc.");
+		question = new BooleanQuestion(1, "ボーナスは支給されますかx?");
+		criteria = new Criteria();
 		
+	}
+
+	@Test
+	public void test必須の条件にマッチしない場合_matchesはfalseを返す() {		
 		Answer profileAnswer = new Answer(question, Bool.FALSE);
 		profile.add(profileAnswer);
 
-		Criteria criteria = new Criteria();
 		Answer criteriaAnswer = new Answer(question, Bool.TRUE);
 		Criterion criterion = new Criterion(criteriaAnswer, Weight.MustMatch);
 		criteria.add(criterion);
@@ -33,13 +41,9 @@ public class ProfileTest {
 	
 	@Test
 	public void test不問の条件があれば_matchesはtrueを返す() {
-		Profile profile = new Profile("Bull Hockey, Inc.");
-		Question question = new BooleanQuestion(1, "ボーナスは支給されますかx?");
-		
 		Answer profileAnswer = new Answer(question, Bool.FALSE);
 		profile.add(profileAnswer);
 
-		Criteria criteria = new Criteria();
 		Answer criteriaAnswer = new Answer(question, Bool.TRUE);
 		Criterion criterion = new Criterion(criteriaAnswer, Weight.DontCare);
 		criteria.add(criterion);
