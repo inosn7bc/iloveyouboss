@@ -12,6 +12,11 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*; 
 import org.junit.*;
 
+/**
+ * てすと
+ * @author sn1
+ *
+ */
 public class ProfileTest {
 
 	private Profile profile;
